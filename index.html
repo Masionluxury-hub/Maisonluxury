@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxuri — Colección de Perfumes</title>
+<style>
+  /* ... (Todos los estilos anteriores se mantienen igual) ... */
+  @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap');
+
+  :root{
+    --black:#050505;
+    --black-2:#0a0a0c;
+    --panel:#131316;
+    --panel-2:#19191d;
+    --gold:#cba135;
+    --gold-light:#f6e27a;
+    --gold-deep:#8a6a1e;
+    --silver:#c9c9d1;
+    --silver-light:#eceef2;
+    --text:#f3f1ea;
+    --text-dim:#9d9a92;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--black);
+    color:var(--text);
+    font-family:'Jost', sans-serif;
+    min-height:100vh;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 70px;}
+
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 26px;border-bottom:1px solid rgba(203,161,53,0.18);
+    flex-wrap:wrap;gap:10px;
+  }
+  .nav-logo{display:flex;align-items:center;gap:10px;}
+  .nav-logo span{
+    font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:0.15em;
+    font-size:15px;color:var(--silver-light);
+  }
+  .nav-logo span .gold{
+    background:linear-gradient(100deg,#f6e27a,#cba135 60%,#8a6a1e);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  .nav-links{display:flex;gap:26px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);flex-wrap:wrap;}
+  .nav-links a{color:var(--text-dim);text-decoration:none;}
+  .nav-links a:hover{color:var(--gold-light);}
+
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid rgba(203,161,53,0.18);}
+  .hero-lines{position:absolute;inset:0;width:100%;height:100%;opacity:0.5;}
+  .hero-glow{
+    position:absolute;top:10%;left:50%;transform:translateX(-50%);
+    width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle, rgba(203,161,53,0.22), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;max-width:1080px;margin:0 auto;
+    display:grid;grid-template-columns:0.9fr 1.1fr;align-items:center;gap:10px;
+    padding:50px 26px 20px;
+  }
+  @media (max-width:780px){
+    .hero-inner{grid-template-columns:1fr;text-align:center;padding-top:34px;}
+    .hero-bottle{order:1;margin:0 auto;}
+    .hero-copy{order:2;align-items:center;}
+    .hero-ctas{justify-content:center;}
+  }
+  .hero-bottle{position:relative;display:flex;flex-direction:column;align-items:center;}
+  .pedestal{width:150px;height:14px;background:linear-gradient(180deg,#3a3a3f,#111113);border-radius:2px;margin-top:-6px;box-shadow:0 8px 18px rgba(0,0,0,0.6);}
+  .hero-copy{display:flex;flex-direction:column;align-items:flex-start;}
+  .eyebrow{font-size:11px;letter-spacing:0.42em;text-transform:uppercase;color:var(--silver);margin-bottom:16px;}
+  .hero-title{
+    font-family:'Cormorant Garamond', serif;font-weight:500;font-style:normal;
+    font-size:clamp(40px,6.4vw,64px);line-height:1.05;margin:0;letter-spacing:0.01em;
+  }
+  .hero-title .light{color:var(--silver-light);}
+  .hero-title .gold{
+    background:linear-gradient(100deg,#f6e27a,#cba135 60%,#8a6a1e);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  .hero-tagline{
+    font-family:'Alex Brush', cursive;font-size:clamp(26px,3.6vw,36px);
+    color:var(--gold-light);margin:6px 0 10px;line-height:1;
+  }
+  .hero-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--silver);max-width:400px;margin:6px 0 26px;line-height:1.5;}
+  .hero-ctas{display:flex;align-items:center;gap:16px;}
+  .hero-ctas .divider{color:rgba(243,241,234,0.3);}
+  .btn-hero{background:none;border:1px solid var(--gold);color:var(--gold-light);padding:12px 22px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;border-radius:0;font-family:'Jost',sans-serif;}
+  .btn-hero:hover{background:rgba(203,161,53,0.12);}
+  .btn-hero.solid{background:linear-gradient(90deg,var(--gold-light),var(--gold));color:#1a1305;border:none;}
+
+  .hero-stats{position:relative;display:flex;justify-content:center;gap:60px;flex-wrap:wrap;padding:26px 20px 24px;}
+  .chip-row{position:relative;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:0 20px 40px;}
+  .chip{border:1px solid rgba(203,161,53,0.4);color:var(--silver-light);background:rgba(203,161,53,0.06);border-radius:999px;padding:8px 18px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;}
+  .chip:hover{background:rgba(203,161,53,0.18);border-color:var(--gold-light);}
+  .type-badge{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver-light);border:1px solid rgba(201,201,209,0.4);border-radius:2px;padding:2px 7px;margin-left:8px;}
+  .stat-val{font-family:'Cormorant Garamond', serif;font-size:30px;color:var(--gold-light);}
+  .stat-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);}
+
+  .section-title{text-align:center;padding:44px 20px 10px;}
+  .section-title .k{font-size:10px;letter-spacing:0.36em;text-transform:uppercase;color:var(--text-dim);}
+  .section-title h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:32px;margin:8px 0 0;color:var(--silver-light);}
+
+  .showcase-row{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:22px;flex-wrap:wrap;padding:18px 20px 44px;}
+  .showcase-row::before{
+    content:'';position:absolute;top:-20px;left:50%;transform:translateX(-50%);
+    width:80%;max-width:700px;height:220px;
+    background:radial-gradient(ellipse, rgba(203,161,53,0.14), transparent 72%);
+    pointer-events:none;z-index:0;
+  }
+  .showcase-item{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;transition:transform .25s ease;}
+  .showcase-item:hover{transform:translateY(-6px) scale(1.04);}
+  .showcase-item:nth-child(2n){margin-top:18px;}
+  .showcase-item:nth-child(3n){margin-top:-10px;}
+  /* Estilos para las nuevas imágenes */
+  .showcase-img{
+    max-width:60px; /* Ajusta el tamaño según prefieras */
+    height:auto;
+    filter:drop-shadow(0 14px 16px rgba(0,0,0,0.65)); /* Mantiene la sombra 3D */
+    display:block;
+  }
+  .showcase-label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);}
+  .showcase-plate{width:58px;height:10px;border-radius:50%;background:radial-gradient(ellipse, rgba(0,0,0,0.55), transparent 75%);margin-top:-8px;filter:blur(1px);}
+  .controls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:26px 0 26px;}
+  select, input, textarea{background:var(--panel);border:1px solid rgba(203,161,53,0.28);border-radius:2px;color:var(--text);padding:10px 12px;font-family:'Jost', sans-serif;font-size:14px;width:100%;}
+  select:focus, input:focus, textarea:focus{outline:2px solid var(--silver);outline-offset:1px;}
+  label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px;display:block;}
+  .btn{cursor:pointer;border:none;border-radius:999px;font-family:'Jost', sans-serif;font-weight:500;letter-spacing:0.05em;}
+  .btn:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;}
+  .btn-gold{background:linear-gradient(90deg,var(--gold-light),var(--gold));color:#1a1305;padding:12px 24px;font-size:14px;border-radius:2px;}
+  .btn-outline{background:transparent;border:1px solid rgba(243,241,234,0.3);color:var(--text);padding:10px 20px;font-size:14px;border-radius:2px;}
+  .btn-ghost{background:rgba(243,241,234,0.06);color:var(--text);padding:5px 11px;font-size:12px;border-radius:2px;}
+  .btn-gold-outline{background:transparent;border:1px solid rgba(203,161,53,0.5);color:var(--gold-light);padding:5px 11px;font-size:12px;border-radius:2px;}
+
+  .card{background:linear-gradient(160deg, var(--panel-2), var(--panel));border:1px solid rgba(203,161,53,0.2);border-radius:4px;}
+  .form-card{padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:30px;}
+  .form-card .full{grid-column:1/-1;}
+  .form-row2{display:flex;gap:10px;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;}
+  .p-card{position:relative;padding:24px 20px 20px;transition:border-color .2s ease;}
+  .p-card:hover{border-color:rgba(203,161,53,0.6);}
+  .cnr{position:absolute;width:14px;height:14px;border-color:var(--gold);opacity:0.55;}
+  .cnr.tl{top:7px;left:7px;border-top:1px solid;border-left:1px solid;}
+  .cnr.tr{top:7px;right:7px;border-top:1px solid;border-right:1px solid;}
+  .cnr.bl{bottom:7px;left:7px;border-bottom:1px solid;border-left:1px solid;}
+  .cnr.br{bottom:7px;right:7px;border-bottom:1px solid;border-right:1px solid;}
+  .p-photo{width:100%;height:190px;object-fit:cover;border-radius:2px;border:1px solid rgba(203,161,53,0.3);display:block;}
+  .p-photo-placeholder{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle, rgba(203,161,53,0.12), rgba(0,0,0,0.2));}
+  .p-desc{font-family:'Cormorant Garamond', serif;font-size:15px;font-style:italic;color:var(--silver);line-height:1.4;margin:10px 0 6px;}
+  .p-head{display:flex;justify-content:space-between;align-items:flex-start;margin-top:12px;}
+  .fav-overlay{position:absolute;top:14px;right:14px;background:rgba(5,5,5,0.55);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;font-size:16px;z-index:2;}
+  .photo-preview img{width:80px;height:80px;object-fit:cover;border-radius:2px;border:1px solid rgba(203,161,53,0.3);}
+  .p-desc, .p-head, .fav-overlay, .photo-preview img, .p-top, .p-name, .p-brand, .fav, .tag, .stars, .stars span, .bar-bg, .bar-fill, .pyramid-row, .pyramid-label, .pyramid-val, .empty, .del, footer, footer .fw, footer .cities, footer .social{font-family: inherit;}
+
+  footer{border-top:1px solid rgba(203,161,53,0.18);margin-top:50px;padding:40px 26px;text-align:center;}
+  footer .fw{font-family:'Alex Brush',cursive;font-size:32px;color:var(--gold-light);margin-bottom:14px;}
+  footer .cities{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-dim);margin-bottom:18px;}
+  footer .social{display:flex;justify-content:center;gap:20px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);}
+  @media (prefers-reduced-motion: reduce){ .p-card{transition:none;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <!-- SVG del logo principal mantenido -->
+    <svg width="26" height="32" viewBox="0 0 120 150" fill="none">
+      <ellipse cx="60" cy="20" rx="10" ry="9" fill="url(#gA)"/>
+      <rect x="52" y="28" width="16" height="14" rx="3" fill="url(#gA)"/>
+      <path d="M40 42 L80 42 L88 62 C92 70 92 80 88 96 L84 130 C83 136 78 140 72 140 L48 140 C42 140 37 136 36 130 L32 96 C28 80 28 70 32 62 Z"
+        fill="none" stroke="url(#gA)" stroke-width="2.2"/>
+      <defs><linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f6e27a"/><stop offset="0.5" stop-color="#cba135"/><stop offset="1" stop-color="#8a6a1e"/>
+      </linearGradient></defs>
+    </svg>
+    <span>MAISON <span class="gold">LUXURY</span></span>
+  </div>
+  <div class="nav-links">
+    <a href="#coleccion">Colección</a>
+    <a href="#coleccion">Esencias</a>
+    <a href="#coleccion">La casa</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <!-- ... (Contenido del hero mantenido igual) ... ... -->
+  <svg class="hero-lines" viewBox="0 0 1080 520" preserveAspectRatio="none">
+    <g stroke="#cba135" stroke-width="1" opacity="0.28">
+      <line x1="0" y1="0" x2="420" y2="520"/>
+      <line x1="80" y1="0" x2="500" y2="520"/>
+      <line x1="1080" y1="0" x2="660" y2="520"/>
+      <line x1="1000" y1="0" x2="580" y2="520"/>
+      <line x1="0" y1="180" x2="1080" y2="60"/>
+      <line x1="0" y1="420" x2="1080" y2="300"/>
+    </g>
+  </svg>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-bottle">
+      <svg width="180" height="260" viewBox="0 0 120 175" fill="none">
+        <ellipse cx="60" cy="24" rx="13" ry="11" fill="url(#gB)"/>
+        <rect x="49" y="34" width="22" height="18" rx="4" fill="url(#gB)"/>
+        <path d="M36 52 L84 52 L96 78 C101 88 101 100 96 120 L91 162 C90 169 84 174 76 174 L44 174 C36 174 30 169 29 162 L24 120 C19 100 19 88 24 78 Z"
+          fill="rgba(10,10,12,0.7)" stroke="url(#gB)" stroke-width="2"/>
+        <line x1="60" y1="52" x2="60" y2="174" stroke="url(#gB)" stroke-width="1" opacity="0.5"/>
+        <line x1="42" y1="70" x2="42" y2="160" stroke="url(#gB)" stroke-width="0.8" opacity="0.35"/>
+        <line x1="78" y1="70" x2="78" y2="160" stroke="url(#gB)" stroke-width="0.8" opacity="0.35"/>
+        <path d="M42 20 Q60 4 78 20" stroke="url(#gB)" stroke-width="1.6" fill="none" opacity="0.85"/>
+        <defs><linearGradient id="gB" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#f6e27a"/><stop offset="0.5" stop-color="#cba135"/><stop offset="1" stop-color="#8a6a1e"/>
+        </linearGradient></defs>
+      </svg>
+      <div class="pedestal"></div>
+    </div>
+    <div class="hero-copy">
+      <div class="eyebrow">Catálogo de fragancias exclusivas</div>
+      <h1 class="hero-title"><span class="light">Maison</span> <span class="gold">Luxury</span></h1>
+      <div class="hero-tagline">Elegancia · Proyección · Poder</div>
+      <p class="hero-desc">Explora nuestra selección de casas de diseñador, perfumería de nicho y esencias artesanales. Encuentra la fragancia que te representa.</p>
+      <div class="hero-ctas">
+        <button class="btn-hero solid" onclick="document.getElementById('coleccion').scrollIntoView()">Explorar catálogo</button>
+        <span class="divider">|</span>
+        <button class="btn-hero" id="heroAddBtn">Añadir fragancia</button>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-val" id="statCount">0</div><div class="stat-label">Fragancias</div></div>
+    <div><div class="stat-val" id="statMl">0</div><div class="stat-label">ml disponibles</div></div>
+    <div><div class="stat-val" id="statRating">—</div><div class="stat-label">Valoración media</div></div>
+  </div>
+  <div class="chip-row">
+    <button class="chip" data-chip-type="Todas">Todas</button>
+    <button class="chip" data-chip-type="Diseñador">Diseñador</button>
+    <button class="chip" data-chip-type="Nicho">Nicho</button>
+    <button class="chip" data-chip-type="Casa árabe">Casa árabe</button>
+    <button class="chip" data-chip-type="Artesanal / Indie">Artesanal</button>
+  </div>
+</section>
+
+<div class="wrap" id="coleccion">
+  <div class="section-title">
+    <div class="k">Nuestro catálogo</div>
+    <h2>Descubre tu fragancia</h2>
+  </div>
+
+  <!-- ESTA ES LA FILA DE ITEMS ACTUALIZADA CON TUS FOTOS -->
+  <div class="showcase-row">
+    
+    <!-- Item 1: Floral (image_30.png) -->
+    <div class="showcase-item">
+      <img src="floral.png" alt="Floral" class="showcase-img">
+      <div class="showcase-plate"></div>
+      <div class="showcase-label">Floral</div>
+    </div>
+
+    <!-- Item 2: Oriental (image_31.png) -->
+    <div class="showcase-item">
+      <img src="oriental.png" alt="Oriental" class="showcase-img">
+      <div class="showcase-plate"></div>
+      <div class="showcase-label">Oriental</div>
+    </div>
+
+    <!-- Item 3: Cítrico (image_32.png) -->
+    <div class="showcase-item">
+      <img src="3.png" alt="Cítrico" class="showcase-img">
+      <div class="showcase-plate"></div>
+      <div class="showcase-label">Cítrico</div>
+    </div>
+
+    <!-- Item 4: Amaderado (image_33.png) -->
+    <div class="showcase-item">
+      <img src="4.png" alt="Amaderado" class="showcase-img">
+      <div class="showcase-plate"></div>
+      <div class="showcase-label">Amaderado</div>
+    </div>
+
+    <!-- Item 5: Acuático (image_34.png) -->
+    <div class="showcase-item">
+      <img src="5.png" alt="Acuático" class="showcase-img">
+      <div class="showcase-plate"></div>
+      <div class="showcase-label">Acuático</div>
+    </div>
+
+    <!-- Item 6: Cuero (image_35.png) -->
+    <div class="showcase-item">
+      <img src="6.png" alt="Cuero" class="showcase-img">
+      <div class="showcase-plate"></div>
+      <div class="showcase-label">Cuero</div>
+    </div>
+
+    <!-- Item 7: Oud árabe (image_36.png) -->
+    <div class="showcase-item">
+      <img src="7.png" alt="Oud árabe" class="showcase-img">
+      <div class="showcase-plate"></div>
+      <div class="showcase-label">Oud árabe</div>
+    </div>
+
+    <!-- Item 8: Gourmand (image_37.png) -->
+    <div class="showcase-item">
+      <img src="8.png" alt="Gourmand" class="showcase-img">
+      <div class="showcase-plate"></div>
+      <div class="showcase-label">Gourmand</div>
+    </div>
+
+  </div>
+
+  <div class="controls">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <select id="filterFamily" style="width:auto;"></select>
+      <select id="filterType" style="width:auto;"></select>
+    </div>
+    <button class="btn btn-gold" id="openFormBtn">+ Añadir fragancia</button>
+  </div>
+
+  <div id="saveError" style="display:none;text-align:center;color:#e3a1a1;font-size:13px;margin-bottom:16px;">
+    No se pudo guardar el cambio en este navegador.
+  </div>
+
+  <form id="perfumeForm" class="card form-card" style="display:none;">
+    <!-- ... (Formulario mantenido igual) ... ... -->
+    <div class="full">
+      <label>Foto del perfume</label>
+      <input type="file" id="f_photo" accept="image/*">
+      <div id="photoPreview" class="photo-preview" style="margin-top:8px;"></div>
+    </div>
+    <div class="full">
+      <label>Descripción breve</label>
+      <textarea id="f_desc" rows="2" placeholder="Una fragancia cálida y envolvente, ideal para la noche..."></textarea>
+    </div>
+    <div>
+      <label>Nombre *</label>
+      <input id="f_name" required>
+    </div>
+    <div>
+      <label>Marca *</label>
+      <input id="f_brand" required>
+    </div>
+    <div>
+      <label>Familia olfativa</label>
+      <select id="f_family"></select>
+    </div>
+    <div>
+      <label>Tipo de casa</label>
+      <select id="f_type"></select>
+    </div>
+    <div>
+      <label>Ocasión</label>
+      <input id="f_occasion" placeholder="Noche, diario, gala...">
+    </div>
+    <div>
+      <label>Notas de salida</label>
+      <input id="f_top" placeholder="Bergamota, limón...">
+    </div>
+    <div>
+      <label>Notas de corazón</label>
+      <input id="f_heart" placeholder="Jazmín, rosa...">
+    </div>
+    <div>
+      <label>Notas de fondo</label>
+      <input id="f_base" placeholder="Almizcle, vainilla...">
+    </div>
+    <div class="form-row2">
+      <div style="flex:1;">
+        <label>Tamaño (ml)</label>
+        <input type="number" id="f_size" min="1" value="100">
+      </div>
+      <div style="flex:1;">
+        <label>Restante (ml)</label>
+        <input type="number" id="f_remaining" min="0" value="100">
+      </div>
+    </div>
+    <div>
+      <label>Valoración</label>
+      <div class="stars" id="f_stars"></div>
+      <input type="hidden" id="f_rating" value="3">
+    </div>
+    <div class="full" style="display:flex;gap:10px;">
+      <button type="submit" class="btn btn-gold">Guardar frasco</button>
+      <button type="button" class="btn btn-outline" id="cancelFormBtn">Cancelar</button>
+    </div>
+  </form>
+
+  <div id="grid" class="grid"></div>
+  <div id="emptyMsg" class="empty" style="display:none;"></div>
+</div>
+
+<footer>
+  <div class="fw">Maison Luxury</div>
+  <div class="cities">Elegancia · Proyección · Poder</div>
+  <div class="social"><span>Instagram</span><span>Pinterest</span><span>Diario</span></div>
+</footer>
+
+<script>
+/* ... (Todo el JavaScript anterior se mantiene igual) ... */
+const FAMILIES = {
+  "Floral": "#e8b4c8",
+  "Amaderado": "#b08a4e",
+  "Oriental": "#cba135",
+  "Cítrico": "#e8d98a",
+  "Chipre": "#c9c9d1",
+  "Fougère": "#9fa7ab",
+  "Cuero": "#8a5a3a",
+  "Acuático": "#c9c9d1",
+};
+const TYPES = ["Diseñador", "Nicho", "Casa árabe", "Artesanal / Indie"];
+const STORAGE_KEY = "luxuri_perfumes";
+
+let perfumes = [];
+let expandedId = null;
+let filterFamily = "Todas";
+let filterType = "Todas";
+let currentPhotoData = null;
+
+document.getElementById('f_photo').addEventListener('change', (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    currentPhotoData = reader.result;
+    document.getElementById('photoPreview').innerHTML = `<img src="${currentPhotoData}">`;
+  };
+  reader.readAsDataURL(file);
+});
+
+function uid(){ return Math.random().toString(36).slice(2,10); }
+
+function load(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    perfumes = raw ? JSON.parse(raw) : [];
+  }catch(e){ perfumes = []; }
+}
+function save(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(perfumes));
+    document.getElementById('saveError').style.display = 'none';
+  }catch(e){
+    document.getElementById('saveError').style.display = 'block';
+  }
+}
+
+function populateFamilySelects(){
+  const filterSel = document.getElementById('filterFamily');
+  const formSel = document.getElementById('f_family');
+  filterSel.innerHTML = '<option>Todas</option>' + Object.keys(FAMILIES).map(f=>`<option>${f}</option>`).join('');
+  formSel.innerHTML = Object.keys(FAMILIES).map(f=>`<option>${f}</option>`).join('');
+
+  const filterTypeSel = document.getElementById('filterType');
+  const formTypeSel = document.getElementById('f_type');
+  filterTypeSel.innerHTML = '<option>Todas</option>' + TYPES.map(t=>`<option>${t}</option>`).join('');
+  formTypeSel.innerHTML = TYPES.map(t=>`<option>${t}</option>`).join('');
+}
+
+function starsHTML(value, editable){
+  let html = '';
+  for(let n=1;n<=5;n++){
+    const filled = n <= value;
+    html += `<span data-n="${n}" style="cursor:${editable?'pointer':'default'};color:${filled?'#f6e27a':'rgba(246,226,122,0.22)'};">★</span> `;
+  }
+  return html;
+}
+
+function renderStars(){
+  const el = document.getElementById('f_stars');
+  const rating = Number(document.getElementById('f_rating').value);
+  el.innerHTML = starsHTML(rating, true);
+  el.querySelectorAll('span').forEach(s=>{
+    s.addEventListener('click', ()=>{
+      document.getElementById('f_rating').value = s.dataset.n;
+      renderStars();
+    });
+  });
+}
+
+function bottleSVG(color, pct){
+  const liquidHeight = 34 * Math.max(0.06, Math.min(1, pct));
+  const liquidY = 54 - liquidHeight;
+  return `
+  <svg width="64" height="90" viewBox="0 0 40 56" fill="none">
+    <rect x="15" y="2" width="10" height="8" rx="1.5" fill="#3a2a1a"/>
+    <rect x="17" y="0" width="6" height="4" rx="1" fill="#cba135"/>
+    <path d="M14 10 h12 v6 c5 2 7 6 7 12 v18 a4 4 0 0 1 -4 4 H11 a4 4 0 0 1 -4 -4 V28 c0 -6 2 -10 7 -12 z"
+      fill="#0d0d0f" stroke="${color}" stroke-opacity="0.6" stroke-width="1"/>
+    <clipPath id="clip-${color.replace('#','')}">
+      <path d="M14 10 h12 v6 c5 2 7 6 7 12 v18 a4 4 0 0 1 -4 4 H11 a4 4 0 0 1 -4 -4 V28 c0 -6 2 -10 7 -12 z"/>
+    </clipPath>
+    <rect x="7" y="${liquidY}" width="26" height="${liquidHeight+4}" fill="${color}" opacity="0.85" clip-path="url(#clip-${color.replace('#','')})"/>
+  </svg>`;
+}
+
+function pyramidHTML(p){
+  const rows = [
+    {label:"Salida", value:p.notesTop, width:60},
+    {label:"Corazón", value:p.notesHeart, width:82},
+    {label:"Fondo", value:p.notesBase, width:100},
+  ];
+  return rows.map(r=>`
+    <div class="pyramid-row">
+      <div class="pyramid-label">${r.label}</div>
+      <div class="pyramid-val" style="width:${r.width}%;background:linear-gradient(90deg, rgba(201,201,209,0.15), rgba(203,161,53,0.14));${r.value?'':'font-style:italic;opacity:0.5;'}">
+        ${r.value || "Sin especificar"}
+      </div>
+    </div>
+  `).join('');
+}
+
+function computeStats(){
+  const totalMl = perfumes.reduce((s,p)=>s+Number(p.remainingMl||0),0);
+  const avg = perfumes.length ? (perfumes.reduce((s,p)=>s+Number(p.rating||0),0)/perfumes.length).toFixed(1) : "—";
+  document.getElementById('statCount').textContent = perfumes.length;
+  document.getElementById('statMl').textContent = totalMl;
+  document.getElementById('statRating').textContent = avg;
+}
+
+function render(){
+  computeStats();
+  const grid = document.getElementById('grid');
+  const emptyMsg = document.getElementById('emptyMsg');
+  const visible = perfumes.filter(p=>{
+    const matchFamily = filterFamily === "Todas" || p.family === filterFamily;
+    const matchType = filterType === "Todas" || p.type === filterType;
+    return matchFamily && matchType;
+  });
+
+  if(visible.length === 0){
+    grid.innerHTML = '';
+    emptyMsg.style.display = 'block';
+    emptyMsg.textContent = perfumes.length===0
+      ? "El catálogo está vacío. Añade la primera fragancia para empezar."
+      : "No hay fragancias que coincidan con este filtro.";
+    return;
+  }
+  emptyMsg.style.display = 'none';
+
+  grid.innerHTML = visible.map(p=>{
+    const color = FAMILIES[p.family] || "#c9c9d1";
+    const pct = p.sizeMl ? p.remainingMl/p.sizeMl : 1;
+    const isOpen = expandedId === p.id;
+    return `
+    <div class="card p-card" data-id="${p.id}">
+      <span class="cnr tl"></span><span class="cnr tr"></span><span class="cnr bl"></span><span class="cnr br"></span>
+      <button class="fav-overlay" data-action="fav" style="color:${p.favorite?'#f6e27a':'rgba(255,255,255,0.7)'};">♥</button>
+      ${p.photo
+        ? `<img class="p-photo" src="${p.photo}">`
+        : `<div class="p-photo p-photo-placeholder">${bottleSVG(color, pct)}</div>`}
+      <div class="p-head">
+        <div>
+          <div class="p-name">${p.name}</div>
+          <div class="p-brand">${p.brand}</div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
+          <div class="tag" style="color:${color};border:1px solid ${color}66;">${p.family}</div>
+          ${p.type ? `<div class="type-badge">${p.type}</div>` : ''}
+        </div>
+      </div>
+      ${p.shortDesc ? `<div class="p-desc">${p.shortDesc}</div>` : ''}
+      <div class="stars">${starsHTML(Number(p.rating), false)}</div>
+      <div style="margin-top:10px;">
+        <button class="btn btn-gold-outline" data-action="toggle">${isOpen ? "Ocultar detalles" : "Ver detalles"}</button>
+      </div>
+      ${isOpen ? `
+        <div style="margin-top:14px;">
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-dim);margin-bottom:4px;">
+            <span>${p.remainingMl} / ${p.sizeMl} ml</span><span>${Math.round(pct*100)}%</span>
+          </div>
+          <div class="bar-bg"><div class="bar-fill" style="width:${pct*100}%;background:${color};"></div></div>
+          <button class="btn btn-ghost" data-action="use" style="margin-top:8px;">−5 ml (uso)</button>
+        </div>
+        ${pyramidHTML(p)}
+        ${p.occasion ? `<div style="margin-top:10px;font-size:12px;color:var(--text-dim);font-style:italic;">Para: ${p.occasion}</div>` : ''}
+      ` : ''}
+      <button class="del" data-action="delete">Eliminar frasco</button>
+    </div>`;
+  }).join('');
+
+  grid.querySelectorAll('.p-card').forEach(card=>{
+    const id = card.dataset.id;
+    card.querySelector('[data-action="fav"]').addEventListener('click', ()=>{
+      const p = perfumes.find(x=>x.id===id);
+      p.favorite = !p.favorite;
+      save(); render();
+    });
+    card.querySelector('[data-action="use"]').addEventListener('click', ()=>{
+      const p = perfumes.find(x=>x.id===id);
+      p.remainingMl = Math.max(0, Math.min(p.sizeMl, Number(p.remainingMl)-5));
+      save(); render();
+    });
+    card.querySelector('[data-action="toggle"]').addEventListener('click', ()=>{
+      expandedId = expandedId===id ? null : id;
+      render();
+    });
+    card.querySelector('[data-action="delete"]').addEventListener('click', ()=>{
+      perfumes = perfumes.filter(x=>x.id!==id);
+      if(expandedId===id) expandedId=null;
+      save(); render();
+    });
+  });
+}
+
+document.getElementById('filterFamily').addEventListener('change', (e)=>{
+  filterFamily = e.target.value;
+  render();
+});
+document.getElementById('filterType').addEventListener('change', (e)=>{
+  filterType = e.target.value;
+  render();
+});
+document.querySelectorAll('.chip').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    filterType = chip.dataset.chipType;
+    document.getElementById('filterType').value = filterType;
+    document.getElementById('coleccion').scrollIntoView();
+    render();
+  });
+});
+
+function openForm(){
+  document.getElementById('perfumeForm').style.display = 'grid';
+  document.getElementById('f_rating').value = 3;
+  currentPhotoData = null;
+  document.getElementById('f_photo').value = '';
+  document.getElementById('photoPreview').innerHTML = '';
+  renderStars();
+  document.getElementById('perfumeForm').scrollIntoView({behavior:'smooth', block:'center'});
+}
+document.getElementById('openFormBtn').addEventListener('click', openForm);
+document.getElementById('heroAddBtn').addEventListener('click', ()=>{
+  document.getElementById('coleccion').scrollIntoView();
+  openForm();
+});
+document.getElementById('cancelFormBtn').addEventListener('click', ()=>{
+  document.getElementById('perfumeForm').reset();
+  document.getElementById('perfumeForm').style.display = 'none';
+});
+document.getElementById('f_size').addEventListener('input', (e)=>{
+  document.getElementById('f_remaining').value = e.target.value;
+});
+
+document.getElementById('perfumeForm').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const name = document.getElementById('f_name').value.trim();
+  const brand = document.getElementById('f_brand').value.trim();
+  if(!name || !brand) return;
+  const entry = {
+    id: uid(),
+    name, brand,
+    photo: currentPhotoData,
+    shortDesc: document.getElementById('f_desc').value.trim(),
+    family: document.getElementById('f_family').value,
+    type: document.getElementById('f_type').value,
+    occasion: document.getElementById('f_occasion').value.trim(),
+    notesTop: document.getElementById('f_top').value.trim(),
+    notesHeart: document.getElementById('f_heart').value.trim(),
+    notesBase: document.getElementById('f_base').value.trim(),
+    sizeMl: Number(document.getElementById('f_size').value) || 100,
+    remainingMl: Number(document.getElementById('f_remaining').value) || 100,
+    rating: Number(document.getElementById('f_rating').value) || 3,
+    favorite: false,
+  };
+  perfumes.unshift(entry);
+  save();
+  e.target.reset();
+  currentPhotoData = null;
+  document.getElementById('photoPreview').innerHTML = '';
+  document.getElementById('perfumeForm').style.display = 'none';
+  render();
+});
+
+populateFamilySelects();
+load();
+render();
+</script>
+</body>
+</html>
