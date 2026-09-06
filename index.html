@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luxuri — Colección de Perfumes</title>
 <style>
-  /* ... (Todos los estilos anteriores se mantienen igual) ... */
   @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap');
 
   :root{
@@ -116,11 +115,10 @@
   .showcase-item:hover{transform:translateY(-6px) scale(1.04);}
   .showcase-item:nth-child(2n){margin-top:18px;}
   .showcase-item:nth-child(3n){margin-top:-10px;}
-  /* Estilos para las nuevas imágenes */
   .showcase-img{
-    max-width:60px; /* Ajusta el tamaño según prefieras */
+    max-width:60px;
     height:auto;
-    filter:drop-shadow(0 14px 16px rgba(0,0,0,0.65)); /* Mantiene la sombra 3D */
+    filter:drop-shadow(0 14px 16px rgba(0,0,0,0.65));
     display:block;
   }
   .showcase-label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);}
@@ -168,7 +166,6 @@
 
 <nav>
   <div class="nav-logo">
-    <!-- SVG del logo principal mantenido -->
     <svg width="26" height="32" viewBox="0 0 120 150" fill="none">
       <ellipse cx="60" cy="20" rx="10" ry="9" fill="url(#gA)"/>
       <rect x="52" y="28" width="16" height="14" rx="3" fill="url(#gA)"/>
@@ -188,7 +185,6 @@
 </nav>
 
 <section class="hero">
-  <!-- ... (Contenido del hero mantenido igual) ... ... -->
   <svg class="hero-lines" viewBox="0 0 1080 520" preserveAspectRatio="none">
     <g stroke="#cba135" stroke-width="1" opacity="0.28">
       <line x1="0" y1="0" x2="420" y2="520"/>
@@ -212,8 +208,8 @@
       <p class="hero-desc">Explora nuestra selección de casas de diseñador, perfumería de nicho y esencias artesanales. Encuentra la fragancia que te representa.</p>
       <div class="hero-ctas">
         <button class="btn-hero solid" onclick="document.getElementById('coleccion').scrollIntoView()">Explorar catálogo</button>
-        <span class="divider">|</span>
-        <button class="btn-hero" id="heroAddBtn">Añadir fragancia</button>
+        <span class="divider" id="heroDividerAdmin" style="display:none;">|</span>
+        <button class="btn-hero" id="heroAddBtn" style="display:none;">Añadir fragancia</button>
       </div>
     </div>
   </div>
@@ -237,65 +233,47 @@
     <h2>Descubre tu fragancia</h2>
   </div>
 
-  <!-- ESTA ES LA FILA DE ITEMS ACTUALIZADA CON TUS FOTOS -->
   <div class="showcase-row">
-    
-    <!-- Item 1: Floral (image_30.png) -->
     <div class="showcase-item">
       <img src="floral.png" alt="Floral" class="showcase-img">
       <div class="showcase-plate"></div>
       <div class="showcase-label">Floral</div>
     </div>
-
-    <!-- Item 2: Oriental (image_31.png) -->
     <div class="showcase-item">
       <img src="oriental.png" alt="Oriental" class="showcase-img">
       <div class="showcase-plate"></div>
       <div class="showcase-label">Oriental</div>
     </div>
-
-    <!-- Item 3: Cítrico (image_32.png) -->
     <div class="showcase-item">
       <img src="3.png" alt="Cítrico" class="showcase-img">
       <div class="showcase-plate"></div>
       <div class="showcase-label">Cítrico</div>
     </div>
-
-    <!-- Item 4: Amaderado (image_33.png) -->
     <div class="showcase-item">
       <img src="4.png" alt="Amaderado" class="showcase-img">
       <div class="showcase-plate"></div>
       <div class="showcase-label">Amaderado</div>
     </div>
-
-    <!-- Item 5: Acuático (image_34.png) -->
     <div class="showcase-item">
       <img src="5.png" alt="Acuático" class="showcase-img">
       <div class="showcase-plate"></div>
       <div class="showcase-label">Acuático</div>
     </div>
-
-    <!-- Item 6: Cuero (image_35.png) -->
     <div class="showcase-item">
       <img src="6.png" alt="Cuero" class="showcase-img">
       <div class="showcase-plate"></div>
       <div class="showcase-label">Cuero</div>
     </div>
-
-    <!-- Item 7: Oud árabe (image_36.png) -->
     <div class="showcase-item">
       <img src="7.png" alt="Oud árabe" class="showcase-img">
       <div class="showcase-plate"></div>
       <div class="showcase-label">Oud árabe</div>
     </div>
-
-    <!-- Item 8: Gourmand (image_37.png) -->
     <div class="showcase-item">
       <img src="8.png" alt="Gourmand" class="showcase-img">
       <div class="showcase-plate"></div>
       <div class="showcase-label">Gourmand</div>
     </div>
-
   </div>
 
   <div class="controls">
@@ -303,7 +281,7 @@
       <select id="filterFamily" style="width:auto;"></select>
       <select id="filterType" style="width:auto;"></select>
     </div>
-    <button class="btn btn-gold" id="openFormBtn">+ Añadir fragancia</button>
+    <button class="btn btn-gold" id="openFormBtn" style="display:none;">+ Añadir fragancia</button>
   </div>
 
   <div id="saveError" style="display:none;text-align:center;color:#e3a1a1;font-size:13px;margin-bottom:16px;">
@@ -311,7 +289,6 @@
   </div>
 
   <form id="perfumeForm" class="card form-card" style="display:none;">
-    <!-- ... (Formulario mantenido igual) ... ... -->
     <div class="full">
       <label>Foto del perfume</label>
       <input type="file" id="f_photo" accept="image/*">
@@ -385,7 +362,6 @@
 </footer>
 
 <script>
-/* ... (Todo el JavaScript anterior se mantiene igual) ... */
 const FAMILIES = {
   "Floral": "#e8b4c8",
   "Amaderado": "#b08a4e",
@@ -399,6 +375,7 @@ const FAMILIES = {
 const TYPES = ["Diseñador", "Nicho", "Casa árabe", "Artesanal / Indie"];
 const STORAGE_KEY = "luxuri_perfumes";
 
+const isAdmin = new URLSearchParams(window.location.search).get('admin') === '1';
 let perfumes = [];
 let expandedId = null;
 let filterFamily = "Todas";
@@ -533,7 +510,7 @@ function render(){
     return `
     <div class="card p-card" data-id="${p.id}">
       <span class="cnr tl"></span><span class="cnr tr"></span><span class="cnr bl"></span><span class="cnr br"></span>
-      <button class="fav-overlay" data-action="fav" style="color:${p.favorite?'#f6e27a':'rgba(255,255,255,0.7)'};">♥</button>
+      ${isAdmin ? `<button class="fav-overlay" data-action="fav" style="color:${p.favorite?'#f6e27a':'rgba(255,255,255,0.7)'};">♥</button>` : ''}
       ${p.photo
         ? `<img class="p-photo" src="${p.photo}">`
         : `<div class="p-photo p-photo-placeholder">${bottleSVG(color, pct)}</div>`}
@@ -549,8 +526,9 @@ function render(){
       </div>
       ${p.shortDesc ? `<div class="p-desc">${p.shortDesc}</div>` : ''}
       <div class="stars">${starsHTML(Number(p.rating), false)}</div>
-      <div style="margin-top:10px;">
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
         <button class="btn btn-gold-outline" data-action="toggle">${isOpen ? "Ocultar detalles" : "Ver detalles"}</button>
+        ${!isAdmin ? `<button class="btn btn-gold" data-action="choose" style="padding:8px 16px;font-size:12px;">Quiero esta fragancia</button>` : ''}
       </div>
       ${isOpen ? `
         <div style="margin-top:14px;">
@@ -558,23 +536,33 @@ function render(){
             <span>${p.remainingMl} / ${p.sizeMl} ml</span><span>${Math.round(pct*100)}%</span>
           </div>
           <div class="bar-bg"><div class="bar-fill" style="width:${pct*100}%;background:${color};"></div></div>
-          <button class="btn btn-ghost" data-action="use" style="margin-top:8px;">−5 ml (uso)</button>
+          ${isAdmin ? `<button class="btn btn-ghost" data-action="use" style="margin-top:8px;">−5 ml (uso)</button>` : ''}
         </div>
         ${pyramidHTML(p)}
         ${p.occasion ? `<div style="margin-top:10px;font-size:12px;color:var(--text-dim);font-style:italic;">Para: ${p.occasion}</div>` : ''}
       ` : ''}
-      <button class="del" data-action="delete">Eliminar frasco</button>
+      ${isAdmin ? `<button class="del" data-action="delete">Eliminar frasco</button>` : ''}
     </div>`;
   }).join('');
 
   grid.querySelectorAll('.p-card').forEach(card=>{
     const id = card.dataset.id;
-    card.querySelector('[data-action="fav"]').addEventListener('click', ()=>{
+    const chooseBtn = card.querySelector('[data-action="choose"]');
+    if(chooseBtn){
+      chooseBtn.addEventListener('click', ()=>{
+        chooseBtn.textContent = "¡Elegida! Te contactaremos";
+        chooseBtn.disabled = true;
+        chooseBtn.style.opacity = "0.7";
+      });
+    }
+    const favBtn = card.querySelector('[data-action="fav"]');
+    if(favBtn) favBtn.addEventListener('click', ()=>{
       const p = perfumes.find(x=>x.id===id);
       p.favorite = !p.favorite;
       save(); render();
     });
-    card.querySelector('[data-action="use"]').addEventListener('click', ()=>{
+    const useBtn = card.querySelector('[data-action="use"]');
+    if(useBtn) useBtn.addEventListener('click', ()=>{
       const p = perfumes.find(x=>x.id===id);
       p.remainingMl = Math.max(0, Math.min(p.sizeMl, Number(p.remainingMl)-5));
       save(); render();
@@ -583,7 +571,8 @@ function render(){
       expandedId = expandedId===id ? null : id;
       render();
     });
-    card.querySelector('[data-action="delete"]').addEventListener('click', ()=>{
+    const delBtn = card.querySelector('[data-action="delete"]');
+    if(delBtn) delBtn.addEventListener('click', ()=>{
       perfumes = perfumes.filter(x=>x.id!==id);
       if(expandedId===id) expandedId=null;
       save(); render();
@@ -663,6 +652,12 @@ document.getElementById('perfumeForm').addEventListener('submit', (e)=>{
 populateFamilySelects();
 load();
 render();
+
+if(isAdmin){
+  document.getElementById('openFormBtn').style.display = 'inline-block';
+  document.getElementById('heroAddBtn').style.display = 'inline-block';
+  document.getElementById('heroDividerAdmin').style.display = 'inline';
+}
 </script>
 </body>
-</html>
+</html> 
