@@ -86,7 +86,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "FougÃ¨re",
     "price": "120.000",
-    "photo": "catalogo/1000504307.webp"
+    "photo": "catalogo/sublime1.webp"
   },
   {
     "id": "l4f2cu3l",
