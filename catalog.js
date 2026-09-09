@@ -94,6 +94,6 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Oriental",
     "price": "120.000",
-    "photo": "catalogo/1000504306.webp"
+    "photo": "catalogo/rogue1.webp"
   }
 ];
