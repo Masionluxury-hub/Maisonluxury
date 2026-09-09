@@ -6,7 +6,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "100.000",
-    "photo": "catalogo/1000504316.webp"
+    "photo": "catalogo/thank u next (ariana grande).png"
   },
   {
     "id": "raqwar2c",
