@@ -62,7 +62,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "100.000",
-    "photo": "catalogo/1000504310.webp"
+    "photo": "catalogo/bomba1.webp"
   },
   {
     "id": "kwc10309",
