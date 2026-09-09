@@ -46,7 +46,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "CÃ­trico",
     "price": "120.000",
-    "photo": "catalogo/1000504324.webp"
+    "photo": "catalogo/nitrored1.webp"
   },
   {
     "id": "l7qndxws",
