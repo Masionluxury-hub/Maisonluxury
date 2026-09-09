@@ -30,7 +30,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "90.000",
-    "photo": "catalogo/1000504311.webp"
+    "photo": "catalogo/mochi1.webp"
   },
   {
     "id": "rr3anica",
