@@ -5,7 +5,7 @@ window.MAISON_CATALOG = [
     "name": "THANK U NEXT ( ARIANA GRANDE",
     "reference": "",
     "family": "Floral",
-    "price": "100.000",
+    "price": "120.000",
     "photo": "catalogo/thankunext.webp"
   },
   {
