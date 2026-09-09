@@ -38,7 +38,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Amaderado",
     "price": "110.000",
-    "photo": "catalogo/1000504309.webp"
+    "photo": "catalogo/oudglory1.webp"
   },
   {
     "id": "dzm8v8w3",
