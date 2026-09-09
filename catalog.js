@@ -78,7 +78,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Oriental",
     "price": "100.000",
-    "photo": "catalogo/1000504315.webp"
+    "photo": "catalogo/kamra1.webp"
   },
   {
     "id": "wf11tbvf",
