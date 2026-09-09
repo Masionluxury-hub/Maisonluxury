@@ -44,7 +44,7 @@ window.MAISON_CATALOG = [
     "id": "dzm8v8w3",
     "name": "NITRO RED",
     "reference": "",
-    "family": "CÃ­trico",
+    "family": "Ci­trico",
     "price": "120.000",
     "photo": "catalogo/nitrored1.webp"
   },
@@ -52,9 +52,9 @@ window.MAISON_CATALOG = [
     "id": "l7qndxws",
     "name": "CLUB DE NUIT",
     "reference": "",
-    "family": "CÃ­trico",
+    "family": "Ci­trico",
     "price": "110.000",
-    "photo": "catalogo/1000504323.webp"
+    "photo": "catalogo/clubnuit1.webp"
   },
   {
     "id": "pbfdrdj2",
