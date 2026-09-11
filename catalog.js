@@ -6,7 +6,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "80.000",
-    "photo": "catalogo/1000508062.webp"
+    "photo": "catalogo/parís1.webp"
   },
   {
     "id": "efvq59ie",
@@ -14,7 +14,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Chipre",
     "price": "95.000",
-    "photo": "catalogo/1000508031.webp"
+    "photo": "catalogo/salvaje1.webp"
   },
   {
     "id": "dwey3ikp",
@@ -22,7 +22,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Chipre",
     "price": "80.000",
-    "photo": "catalogo/1000508060.webp"
+    "photo": "catalogo/santal33.webp"
   },
   {
     "id": "om2x4hkn",
@@ -30,7 +30,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "100.000",
-    "photo": "catalogo/1000508058.webp"
+    "photo": "catalogo/hfire1.webp"
   },
   {
     "id": "h7v1ojd1",
@@ -38,7 +38,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Amaderado",
     "price": "80.000",
-    "photo": "catalogo/1000508056.webp"
+    "photo": "catalogo/baccarat1.webp"
   },
   {
     "id": "sx3flmn0",
@@ -46,7 +46,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "FougÃ¨re",
     "price": "100.000",
-    "photo": "catalogo/1000508041.webp"
+    "photo": "catalogo/homme2.webp"
   },
   {
     "id": "pg0rsugu",
@@ -54,7 +54,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "FougÃ¨re",
     "price": "100.000",
-    "photo": "catalogo/1000508039.webp"
+    "photo": "catalogo/homme1.webp"
   },
   {
     "id": "uzlo81s7",
@@ -62,7 +62,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "CÃ­trico",
     "price": "80.000",
-    "photo": "catalogo/1000508037.webp"
+    "photo": "catalogo/credo1.webp"
   },
   {
     "id": "u9do381u",
@@ -70,15 +70,15 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "125.000",
-    "photo": "catalogo/1000508035.webp"
+    "photo": "catalogo/martillo1.webp"
   },
   {
     "id": "n35010rf",
-    "name": "ARABIANS TONKA  (PARIS)",
+    "name": "ARABIANS TONKA  (PARÍS)",
     "reference": "",
     "family": "FougÃ¨re",
     "price": "80.000",
-    "photo": "catalogo/1000508033.webp"
+    "photo": "catalogo/tonka1.webp"
   },
   {
     "id": "z6tt9r38",
@@ -86,7 +86,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Oriental",
     "price": "95.000",
-    "photo": "catalogo/1000508029.webp"
+    "photo": "catalogo/malva1.webp"
   },
   {
     "id": "md81odsb",
@@ -94,7 +94,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Oriental",
     "price": "120.000",
-    "photo": "catalogo/1000508027.webp"
+    "photo": "catalogo/confesión1.webp"
   },
   {
     "id": "jhxneov7",
@@ -102,7 +102,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "120.000",
-    "photo": "catalogo/1000508025.webp"
+    "photo": "catalogo/brisa1.webp"
   },
   {
     "id": "8vfl1e0l",
@@ -110,7 +110,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "80.000",
-    "photo": "catalogo/1000508023.webp"
+    "photo": "catalogo/eclaire1.webp"
   },
   {
     "id": "5lxhobc7",
@@ -118,7 +118,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "80.000",
-    "photo": "catalogo/1000508021.webp"
+    "photo": "catalogo/cande1.webp"
   },
   {
     "id": "hg84ejj9",
@@ -126,7 +126,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "FougÃ¨re",
     "price": "115.000",
-    "photo": "catalogo/1000508012.webp"
+    "photo": "catalogo/rubor1.webp"
   },
   {
     "id": "74j406cg",
@@ -134,7 +134,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Oriental",
     "price": "120.000",
-    "photo": "catalogo/1000508010.webp"
+    "photo": "catalogo/fakharross2.webp"
   },
   {
     "id": "w5p8e55y",
@@ -142,7 +142,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Oriental",
     "price": "80.000",
-    "photo": "catalogo/1000507996.webp"
+    "photo": "catalogo/yaraelixir1.webp"
   },
   {
     "id": "lmjy7c2a",
@@ -150,7 +150,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "115.000",
-    "photo": "catalogo/1000507978.webp"
+    "photo": "catalogo/yumyum1.webp"
   },
   {
     "id": "dmqc1may",
@@ -158,7 +158,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Chipre",
     "price": "80.000",
-    "photo": "catalogo/1000507968.webp"
+    "photo": "catalogo/chicabuena1.webp"
   },
   {
     "id": "2e7o45x4",
@@ -166,7 +166,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "80.000",
-    "photo": "catalogo/1000507927.webp"
+    "photo": "catalogo/nubearianagrande1.webp"
   },
   {
     "id": "feqc4c14",
@@ -174,7 +174,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "90.000",
-    "photo": "catalogo/1000507872.webp"
+    "photo": "catalogo/bff1.webp"
   },
   {
     "id": "l3z3eqga",
@@ -182,7 +182,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "80.000",
-    "photo": "catalogo/1000507871.webp"
+    "photo": "catalogo/coral360.webp"
   },
   {
     "id": "vgzn2g5x",
@@ -190,7 +190,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "80.000",
-    "photo": "catalogo/1000507868.webp"
+    "photo": "catalogo/lavidaesbella1.webp"
   },
   {
     "id": "wu1ji218",
