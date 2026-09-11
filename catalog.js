@@ -6,7 +6,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Floral",
     "price": "80.000",
-    "photo": "catalogo/parís1.webp"
+    "photo": "catalogo/paris1.webp"
   },
   {
     "id": "efvq59ie",
@@ -94,7 +94,7 @@ window.MAISON_CATALOG = [
     "reference": "",
     "family": "Oriental",
     "price": "120.000",
-    "photo": "catalogo/confesión1.webp"
+    "photo": "catalogo/confession1.webp"
   },
   {
     "id": "jhxneov7",
