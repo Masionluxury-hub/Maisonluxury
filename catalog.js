@@ -1,6 +1,198 @@
 // CatÃ¡logo publicado. Las imÃ¡genes estÃ¡n en /catalogo.
 window.MAISON_CATALOG = [
   {
+    "id": "5bkp6y20",
+    "name": "PARIS HILTON",
+    "reference": "",
+    "family": "Floral",
+    "price": "80.000",
+    "photo": "catalogo/1000508062.webp"
+  },
+  {
+    "id": "efvq59ie",
+    "name": "SAUVAGE ELIXIR ( DIOR)",
+    "reference": "",
+    "family": "Chipre",
+    "price": "95.000",
+    "photo": "catalogo/1000508031.webp"
+  },
+  {
+    "id": "dwey3ikp",
+    "name": "SANTAL 33",
+    "reference": "",
+    "family": "Chipre",
+    "price": "80.000",
+    "photo": "catalogo/1000508060.webp"
+  },
+  {
+    "id": "om2x4hkn",
+    "name": "HAWAS FIRE",
+    "reference": "",
+    "family": "Floral",
+    "price": "100.000",
+    "photo": "catalogo/1000508058.webp"
+  },
+  {
+    "id": "h7v1ojd1",
+    "name": "BACCARAT ROUGUE",
+    "reference": "",
+    "family": "Amaderado",
+    "price": "80.000",
+    "photo": "catalogo/1000508056.webp"
+  },
+  {
+    "id": "sx3flmn0",
+    "name": "ODYSSEY HOMME WHITE",
+    "reference": "",
+    "family": "FougÃ¨re",
+    "price": "100.000",
+    "photo": "catalogo/1000508041.webp"
+  },
+  {
+    "id": "pg0rsugu",
+    "name": "ODYSSEY HOMME",
+    "reference": "",
+    "family": "FougÃ¨re",
+    "price": "100.000",
+    "photo": "catalogo/1000508039.webp"
+  },
+  {
+    "id": "uzlo81s7",
+    "name": "CREED AVENTUS",
+    "reference": "",
+    "family": "CÃ­trico",
+    "price": "80.000",
+    "photo": "catalogo/1000508037.webp"
+  },
+  {
+    "id": "u9do381u",
+    "name": "SUMMER.HAMMER",
+    "reference": "",
+    "family": "Floral",
+    "price": "125.000",
+    "photo": "catalogo/1000508035.webp"
+  },
+  {
+    "id": "n35010rf",
+    "name": "ARABIANS TONKA  (PARIS)",
+    "reference": "",
+    "family": "FougÃ¨re",
+    "price": "80.000",
+    "photo": "catalogo/1000508033.webp"
+  },
+  {
+    "id": "z6tt9r38",
+    "name": "ODYSSEY MARSHMALLOW",
+    "reference": "",
+    "family": "Oriental",
+    "price": "95.000",
+    "photo": "catalogo/1000508029.webp"
+  },
+  {
+    "id": "md81odsb",
+    "name": "HER CONFESSION ( LATAFFA)",
+    "reference": "",
+    "family": "Oriental",
+    "price": "120.000",
+    "photo": "catalogo/1000508027.webp"
+  },
+  {
+    "id": "jhxneov7",
+    "name": "ISLAND BREEZE ( ARMAF )",
+    "reference": "",
+    "family": "Floral",
+    "price": "120.000",
+    "photo": "catalogo/1000508025.webp"
+  },
+  {
+    "id": "8vfl1e0l",
+    "name": "ECLAIRE  (LATAFFA)",
+    "reference": "",
+    "family": "Floral",
+    "price": "80.000",
+    "photo": "catalogo/1000508023.webp"
+  },
+  {
+    "id": "5lxhobc7",
+    "name": "ODYSSEY CANDEE",
+    "reference": "",
+    "family": "Floral",
+    "price": "80.000",
+    "photo": "catalogo/1000508021.webp"
+  },
+  {
+    "id": "hg84ejj9",
+    "name": "MARSHMALLOW BLUSH",
+    "reference": "",
+    "family": "FougÃ¨re",
+    "price": "115.000",
+    "photo": "catalogo/1000508012.webp"
+  },
+  {
+    "id": "74j406cg",
+    "name": "FAKHAR ROSS",
+    "reference": "",
+    "family": "Oriental",
+    "price": "120.000",
+    "photo": "catalogo/1000508010.webp"
+  },
+  {
+    "id": "w5p8e55y",
+    "name": "YARA ELIXIR",
+    "reference": "",
+    "family": "Oriental",
+    "price": "80.000",
+    "photo": "catalogo/1000507996.webp"
+  },
+  {
+    "id": "lmjy7c2a",
+    "name": "YUM YUM (ARMAF)",
+    "reference": "",
+    "family": "Floral",
+    "price": "115.000",
+    "photo": "catalogo/1000507978.webp"
+  },
+  {
+    "id": "dmqc1may",
+    "name": "GOOD GIRL (CAROLINA HERRERA )",
+    "reference": "",
+    "family": "Chipre",
+    "price": "80.000",
+    "photo": "catalogo/1000507968.webp"
+  },
+  {
+    "id": "2e7o45x4",
+    "name": "CLOUD ( ARIANA GRANDE)",
+    "reference": "",
+    "family": "Floral",
+    "price": "80.000",
+    "photo": "catalogo/1000507927.webp"
+  },
+  {
+    "id": "feqc4c14",
+    "name": "BFF (KIM KARDASHIAN)",
+    "reference": "",
+    "family": "Floral",
+    "price": "90.000",
+    "photo": "catalogo/1000507872.webp"
+  },
+  {
+    "id": "l3z3eqga",
+    "name": "CORAL 360",
+    "reference": "",
+    "family": "Floral",
+    "price": "80.000",
+    "photo": "catalogo/1000507871.webp"
+  },
+  {
+    "id": "vgzn2g5x",
+    "name": "LA VIDA ES BELLA",
+    "reference": "",
+    "family": "Floral",
+    "price": "80.000",
+    "photo": "catalogo/1000507868.webp"
+  },
+  {
     "id": "wu1ji218",
     "name": "PISA",
     "reference": "",
